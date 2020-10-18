@@ -9,8 +9,8 @@ function App() {
   return (
     <BrowserRouter>
       <Navigation />
-      <Route path='/' exact={true} component={Home} />
-      <Route path='/about' component={About} />
+      <Route path='/' exact={true} component={Home} />{" "}
+      <Route path='/about' component={About} />{" "}
     </BrowserRouter>
   );
 }
