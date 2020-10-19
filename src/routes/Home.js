@@ -3,21 +3,9 @@ import axios from "axios";
 import Report from "../components/Report";
 import Today from "../components/Today";
 import { Line } from "react-chartjs-2";
-// import LineChart from "../components/LineChart";
+
 import "./../App.css";
 
-// const state = {
-//   labels: ["January", "February", "March", "April", "May"],
-//   datasets: [
-//     {
-//       label: "Rainfall",
-//       backgroundColor: "rgba(75,192,192,1)",
-//       borderColor: "rgba(0,0,0,1)",
-//       borderWidth: 2,
-//       data: [65, 59, 80, 81, 56]
-//     }
-//   ]
-// };
 class Home extends React.Component {
   state = {
     isLoading: true,
@@ -36,12 +24,7 @@ class Home extends React.Component {
       const report_on = reports[i].infectedByRegion[6].infectedCount;
       on.push(report_on);
     }
-    // for (var i = 0; i < reports.length; i++) {
-    //     const report_date = reports[i].lastUpdatedAtApify.slice(0, 10);
-    //     date.push(report_date);
-    //     const report_on = reports[i].infectedByRegion[6].infectedCount;
-    //     on.push(report_on);
-    //   }
+
     console.log(date.reverse());
     console.log(on.reverse());
     const data_graph = {
@@ -72,7 +55,7 @@ class Home extends React.Component {
               position: "right"
             }
           }}
-        />{" "}
+        />
       </div>
     );
   };
@@ -91,8 +74,8 @@ class Home extends React.Component {
               <td> Manitoba </td> <td> Saskatchewan </td>
               <td> Alberta </td> <td> British Columbia </td>
               <td> Yukon </td> <td> Northwest Territories </td>
-              <td> Nunavut </td>{" "}
-            </tr>{" "}
+              <td> Nunavut </td>
+            </tr>
             {reports.map((report, index) => (
               <Report
                 id={report.id}
@@ -112,9 +95,9 @@ class Home extends React.Component {
                 nt={report.infectedByRegion[12].infectedCount}
                 nu={report.infectedByRegion[13].infectedCount}
               />
-            ))}{" "}
-          </tbody>{" "}
-        </table>{" "}
+            ))}
+          </tbody>
+        </table>
       </div>
     );
   };
@@ -160,7 +143,6 @@ class Home extends React.Component {
     console.log(reports);
     return (
       <section className='container'>
-        {" "}
         {isLoading ? (
           <div className='loader'>
             <span className='loader_text'> Loading...Collecting the data </span>{" "}
@@ -179,11 +161,11 @@ class Home extends React.Component {
                 reports[1].infectedByRegion[6].infectedCount
               }
               new_canada={reports[0].infected - reports[1].infected}
-            />{" "}
-            {this.render_graph()} {this.render_table()}{" "}
-            <div class='sign'> Copyright© Eunjoo Na 2020 </div>{" "}
+            />
+            {this.render_graph()} {this.render_table()}
+            <div class='sign'> Copyright© Eunjoo Na 2020 </div>
           </div>
-        )}{" "}
+        )}
       </section>
     );
   }
