@@ -1,2 +1,2 @@
-### ontario-covid19-tracker
+# ontario-covid19-tracker
 
